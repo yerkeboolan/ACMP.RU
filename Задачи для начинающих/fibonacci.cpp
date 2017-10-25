@@ -2,31 +2,24 @@
 
 	using namespace std;
 
-	long long int fibo(int num) {
-		int x = 1;
-		int y = 0;
-		int temp;
+	int main() {
+		int f;
+		cin >> f;
+		       
+		int a[f];
 
-		while(num >= 0) {
-			temp = x;
-			x = x + y;
-			y = temp;
-			num--;
+		for(int i = 0; i <= f; i++) {
+			if(i == 0) a[i] = 0;
+			else if(i == 1) a[i] = 1;
+			else a[i] = a[i-1] + a[i-2];
+
 		}
 
-		return y;
-	}
+		cout <<a[f];
 
 
-	int main() {
-
-		int n;
-		cin >> n;
-
-		cout << fibo(n);
 	return 0;
 
-	}
+}
 
-
-		
+	

@@ -3,32 +3,37 @@
 	using namespace std;
 
 	int main() {
-	
-	int n;
-	cin >> n;
+		int n, ages, genders, got = 0, d, ans;
+		cin >> n;
+		int age[n], gender[n];
+		for(int i = 1; i <= n; i++) {
+			cin >> ages >> genders;
+			if(genders == 1) {
+				got++;
+			d = ages;
+			ans = i;
+			}
 
-	int a[2][n];
+			age[i]  = ages;
+			gender[i] = genders;
+			}
 
-	for(int i = 0; i < 2; i++) {
-		for(int j = 0; j < n; j++) {
-			cin >> a[i][j];
+		if(got == 0) {
+			cout << "-1";
+			return 0;
 		}
-	}
 
-
-	int age = a[0][n]
-	int s = 1;   
-	int maxage = 0;
-
-	for(int i = 0; i < 2; i++) {
-		for(int j = 0; j < n; j++) {
-			if(age > maxage) 
-				age = maxage;
-			
+		for(int i = n; i >= 1; i--) {
+			if(age[i] >= d && gender[i] == 1) {
+			d = age[i];
+			ans = i;
+			}
 		}
-	}
-	cout << maxage;	
+
+		cout << ans;
 
 
-	return  0;
-	}
+		return 0;
+		}
+
+		
